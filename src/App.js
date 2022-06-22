@@ -27,14 +27,12 @@ function App() {
         
         </Nav>   
       <main>
-      {!contactSelected ? (
-          <>
+     
             <Services currentCategory={currentCategory}></Services>
             <About></About>
-          </>
-        ) : (
-            <ContactForm></ContactForm>
-          )}
+      
+       
+         
         
         </main>   
     </div>

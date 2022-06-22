@@ -1,17 +1,63 @@
 import React, { useState } from 'react';
-import storykeepers from '../../assets/projects/Screenshot-for-portfolio.png'
+import Modal from 'modal';
 
-const Portfolio = ({category}) => {
+const Portfolio = ({ category }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPhoto, setCurrentPhoto] = useState();
 
-return (
-  <div className= 'flex-row'>
-    <div className = "img-thumbnail mx-1">
-     <img src={storykeepers}  style={{ width: "100%" }} alt="cover" />
-  <h2> My Second Group Project </h2>
-  </div>
-  </div>
+  const [photos] = useState([
+    {
+      name: 'Grocery aisle',
+      category: 'commercial',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+    },
+    {
+      name: 'Grocery booth',
+      category: 'commercial',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+    },
+    {
+      name: 'Building exterior',
+      category: 'commercial',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+    },
+    {
+      name: 'Restaurant table',
+      category: 'commercial',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
+    }
+    
+   
+  ]);
 
+  const currentPhotos = photos.filter(photo => photo.category === category);
 
- )
-}
+  const toggleModal = (image, i) => {
+    setCurrentPhoto({ ...image, index: i });
+    setIsModalOpen(!isModalOpen);
+  };
+
+  return (
+    <div>
+      {isModalOpen && (
+        <Modal onClose={toggleModal} currentPhoto={currentPhoto} />
+      )}
+      <div className="flex-row">
+        {currentPhotos.map((image, i) => (
+          <img
+            src={require(`../../assets/projects/${category}/${i}.jpg`).default}
+            alt={image.name}
+            className="img-thumbnail mx-1"
+            onClick={() => toggleModal(image, i)}
+            key={image.name}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 export default Portfolio;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import About from './components/About';
-import Contact from './components/Contact';
+import ContactForm from './components/Contact';
 import Gallery from './components/Gallery';
 import Nav from './components/Nav';
 
@@ -8,8 +8,8 @@ import Nav from './components/Nav';
 function App() {
   const [categories] = useState([
     {
-      name: '',
-      description: ''
+      name: 'cover image',
+      description: 'Image of myself'
     }
 
   ]);
@@ -27,8 +27,14 @@ function App() {
         
         </Nav>   
       <main>
-      <Gallery></Gallery>
-      <About></About>
+      {!contactSelected ? (
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : (
+            <ContactForm></ContactForm>
+          )}
         
         </main>   
     </div>

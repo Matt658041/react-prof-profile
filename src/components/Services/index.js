@@ -2,7 +2,7 @@ import React from 'react';
 
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
-function Gallery(props) {
+function Services(props) {
   const { currentCategory } = props;
   return (
     <section>
@@ -12,5 +12,5 @@ function Gallery(props) {
     </section>
   );
 }
-export default Gallery;
+export default Services;
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import About from './components/About';
 import ContactForm from './components/Contact';
-import Gallery from './components/Gallery';
+import Services from './components/Services';
 import Nav from './components/Nav';
 
 
@@ -29,7 +29,7 @@ function App() {
       <main>
       {!contactSelected ? (
           <>
-            <Gallery currentCategory={currentCategory}></Gallery>
+            <Services currentCategory={currentCategory}></Services>
             <About></About>
           </>
         ) : (

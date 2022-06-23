@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import About from './components/About';
 import Nav from './components/Nav';
-import Header from './components/Header';
+import Gallery from './components/Gallery';
 import ContactForm from './components/Contact';
-import Resume from './components/Resume';
 import Footer from './components/Footer';
 
 function App() {
@@ -31,8 +30,8 @@ function App() {
         {!contactSelected ? (
           <>
 
-            <Header currentCategory={currentCategory}></Header>
-            <Resume></Resume>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            
             <About></About>
 
           </>

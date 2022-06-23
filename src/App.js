@@ -8,7 +8,7 @@ import Nav from './components/Nav';
 function App() {
   const [categories] = useState([
     {
-      name: 'cover image',
+      name: 'p',
       description: 'Image of myself'
     }
 

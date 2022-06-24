@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Modal from '../Modal';
+import firstProject from '../../assets/projects/Screenshot-for-first-prjt.png';
+import secondProject from '../../assets/projects/Screenshot-for-portfolio.png';
+
 
 
 const Portfolio = ({ category }) => {
@@ -19,19 +22,7 @@ const Portfolio = ({ category }) => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
     },
-    {
-      name: '3rd group project',
-      category: 'projects',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    },
-    {
-      name: '4th group project',
-      category: 'projects',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie'
-    }
-    
+  
    
   ]);
 
@@ -43,22 +34,25 @@ const Portfolio = ({ category }) => {
   };
 
   return (
-    <div>
-    {isModalOpen && (
-      <Modal onClose={toggleModal} currentPhoto={currentPhoto} />
-    )}
     <div className="flex-row">
-      {currentPhotos.map((image, i) => (
-        <img
-          src={require(`../../assets/projects/${category}/${i}.jpg`).default}
-          alt={image.name}
-          className="img-thumbnail mx-1"
-          onClick={() => toggleModal(image, i)}
-          key={image.name}
-        />
-      ))}
+    <div className="img-thumbnail mx-1">
+        <img src={firstProject} alt="First project" />
+        <h3>First Project</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie</p>
+        <h4> <a href="https://kimberlyannyo.github.io/sip-and-read/">1st Sip-and-Read group project</a></h4>
     </div>
-  </div>
-);
-};
-export default Portfolio;
+    <div className="img-thumbnail mx-1">
+        <img src={secondProject} alt="Second Project" />
+        <h3>Second Project</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie.</p>
+        <h4> <a href=" http://storykeepers.herokuapp.com/">2nd The Story Keepers group project </a></h4>
+    </div>
+   
+    
+</div>
+
+    );
+  };
+  export default Portfolio;
+  
+  

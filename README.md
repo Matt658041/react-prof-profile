@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project can be viewed with this link[My First React Project!](https://matt658041.github.io/react-prof-profile/).
+# This project can be viewed with this link https://matt658041.github.io/react-prof-profile/
 
 <img width="933" alt="image" src="https://user-images.githubusercontent.com/91630948/175569464-dc99e784-0df6-4554-9133-c9952a432347.png">
 
